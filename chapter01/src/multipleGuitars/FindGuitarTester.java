@@ -1,4 +1,4 @@
-package chapter01;
+package multipleGuitars;
 
 import java.util.Iterator;
 import java.util.List;

@@ -1,4 +1,4 @@
-package chapter01;
+package multipleGuitars;
 
 public enum Builder {
 	FENDER, MARTIN, GIBSON, COLLINGS, OLSON, RYAN, PRS, ANY;

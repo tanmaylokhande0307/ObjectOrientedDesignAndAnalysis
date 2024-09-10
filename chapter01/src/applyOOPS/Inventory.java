@@ -1,4 +1,4 @@
-package chapter01;
+package applyOOPS;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -27,31 +27,32 @@ public class Inventory {
     }
     return null;
   }
-  public List<Guitar> search(Guitar searchGuitar) {
+  public List search(GuitarSpec searchSpec) {
 	  List<Guitar> matchingGuitars = new LinkedList<Guitar>();
     for (Iterator i = guitars.iterator(); i.hasNext(); ) {
       Guitar guitar = (Guitar)i.next();
+      GuitarSpec guitarSpec = guitar.getSpec();
       // Ignore serial number since that's unique
       // Ignore price since that's unique
-      Builder builder = searchGuitar.getBuilder();
+      Builder builder = searchSpec.getBuilder();
       if ((builder != null) && (!builder.equals("")) &&
-          (!builder.equals(guitar.getBuilder())))
+          (!builder.equals(guitarSpec.getBuilder())))
         continue;
-      String model = searchGuitar.getModel();
+      String model = searchSpec.getModel();
       if ((model != null) && (!model.equals("")) &&
-          (!model.equals(guitar.getModel())))
+          (!model.equals(guitarSpec.getModel())))
         continue;
-      Type type = searchGuitar.getType();
-      if ((type != null) && (!searchGuitar.equals("")) &&
-          (!type.equals(guitar.getType())))
+      Type type = searchSpec.getType();
+      if ((type != null) && (!searchSpec.equals("")) &&
+          (!type.equals(guitarSpec.getType())))
         continue;
-      Wood backWood = searchGuitar.getBackWood();
+      Wood backWood = searchSpec.getBackWood();
       if ((backWood != null) && (!backWood.equals("")) &&
-          (!backWood.equals(guitar.getBackWood())))
+          (!backWood.equals(guitarSpec.getBackWood())))
         continue;
-      Wood topWood = searchGuitar.getTopWood();
+      Wood topWood = searchSpec.getTopWood();
       if ((topWood != null) && (!topWood.equals("")) &&
-          (!topWood.equals(guitar.getTopWood())))
+          (!topWood.equals(guitarSpec.getTopWood())))
         continue;
       matchingGuitars.add(guitar);
     }

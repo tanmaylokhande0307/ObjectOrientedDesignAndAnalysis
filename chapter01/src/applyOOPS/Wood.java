@@ -1,4 +1,4 @@
-package chapter01;
+package applyOOPS;
 
 public enum Wood { 
 
