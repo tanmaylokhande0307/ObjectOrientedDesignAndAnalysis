@@ -4,15 +4,12 @@ public class Guitar {
 
 	  private String serialNumber;
 	  private double price;
-	  GuitarSpec guitarSpec;
-	  
+	  GuitarSpec spec;
 
-	  public Guitar(String serialNumber, double price, 
-              Builder builder, String model, Type type,
-              Wood backWood, Wood topWood) {
+	  public Guitar(String serialNumber, double price, GuitarSpec spec) {
 	    this.serialNumber = serialNumber;
 	    this.price = price;
-	    this.guitarSpec = new GuitarSpec(builder, model, type, backWood, topWood);
+	    this.spec = spec;
 	  }
 
 	  public String getSerialNumber() {
@@ -22,12 +19,12 @@ public class Guitar {
 	  public double getPrice() {
 	    return price;
 	  }
+
 	  public void setPrice(float newPrice) {
 	    this.price = newPrice;
 	  }
-	  
-	  public GuitarSpec getSpec() {
-		    return this.guitarSpec;
-		  }
 
+	  public GuitarSpec getSpec() {
+	    return spec;
+	  }
 	}
